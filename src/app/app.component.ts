@@ -13,23 +13,24 @@ export class AppComponent {
   title = 'rendering';
   window;
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-  private windowRef: GlobalObjectService,) { 
-    // console.log(window.innerHeight, 'gg'); // not working
-    console.log(this.platformId,'jkhuihu');
+    private windowRef: GlobalObjectService,) {
+    // console.log(window.innerHeight, 'innerHeight'); // not working
+    console.log(this.platformId, 'platformId');
     this.window = windowRef.getWindow();
   }
   ngOnInit() {
-      if (isPlatformServer(this.platformId)) {
-          // do server side stuff
-    console.log('isPlatformServer');
+    if (isPlatformServer(this.platformId)) {
+      console.log('do server side stuff');
 
-      }
+    }
 
-      if (isPlatformBrowser(this.platformId)) {
-                // this.windowRef.scrollTo(0, 0);
-                console.log('isPlatformBrowser');
-                
-              }
+    if (isPlatformBrowser(this.platformId)) {
+      // this.windowRef.scrollTo(0, 0);
+      console.log(this.window, 'window'); // not working
+
+      console.log('do client side stuff');
+
+    }
   }
 
 }
