@@ -21,10 +21,14 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 
 ### About the app
 Implemented SSR in Angular.
+ng add @angular/ssr
 
 ### Packages used
 -    "@nguniversal/express-engine": "^13.1.1",
 -    "express": "^4.15.2",
+    "@angular/platform-server": "~13.3.0",
+    
+    "@nguniversal/builders": "^13.1.1",
 
 ## Subscribe and Stay Updated!
 

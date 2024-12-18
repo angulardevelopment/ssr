@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class GlobalObjectService {
   constructor(@Inject(DOCUMENT) private doc: Document) {}
 

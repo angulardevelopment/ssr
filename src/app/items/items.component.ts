@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, makeStateKey, OnInit, TransferState } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
-import { ItemsService } from '../items.service';
-import { TransferState, makeStateKey } from '@angular/platform-browser';
+import { ItemsService } from '../services/items.service';
+// import { TransferState, makeStateKey } from '@angular/platform-browser';
 
 const STATE_KEY_ITEMS = makeStateKey('items');
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
-  styleUrls: ['./items.component.scss']
+  styleUrls: ['./items.component.scss'],
+  standalone: false
 })
 export class ItemsComponent implements OnInit {
 

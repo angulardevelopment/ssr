@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "rendering:build:production"
+              "buildTarget": "rendering:build:production"
             },
             "development": {
-              "browserTarget": "rendering:build:development"
+              "buildTarget": "rendering:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rendering:build"
+            "buildTarget": "rendering:build"
           }
         },
         "test": {
@@ -111,7 +111,7 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/rendering/server",
-            "main": "server.ts",
+            "main": "src/server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
           },
@@ -156,11 +156,11 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "rendering:build:production",
+              "buildTarget": "rendering:build:production",
               "serverTarget": "rendering:server:production"
             },
             "development": {
-              "browserTarget": "rendering:build:development",
+              "buildTarget": "rendering:build:development",
               "serverTarget": "rendering:server:development"
             }
           },

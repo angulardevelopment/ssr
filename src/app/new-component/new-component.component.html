@@ -1,1 +1,35 @@
 <p>new-component works!</p>
+hydrate triggers
+Same triggers you know and love: Interaction, Immediate, Idle, Viewport, Hover, Timer, When [condition]
+One new trigger: never
+<!-- <user-detail />
+
+@defer (on immediate; hydrate on interaction) {
+  <deferred-user-projects />
+  <deferred-user-blogs />
+} -->
+
+<!-- @defer (hydrate on hover) {
+  @defer (hydrate on timer(15s)) {
+    ...
+  }
+}
+
+@defer (hydrate never) {
+  <user-projects />
+}
+
+<div @defer (on interaction)>
+  <app-heavy-component></app-heavy-component>
+</div> -->
+
+<button #loadBtn>Load Movies</button>
+
+@defer (on interaction(loadBtn)) {
+  <recommended-movies />
+}
+
+@defer(on interaction; hydrate on idle) {
+  <recommended-movies />
+}
+

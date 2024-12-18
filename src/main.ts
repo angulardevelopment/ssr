@@ -1,8 +1,15 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
+import {
+  bootstrapApplication,
+  provideClientHydration, withEventReplay,
+  withIncrementalHydration
+} from '@angular/platform-browser';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { AppComponent } from './app/app.component';
+import { provideRouter } from '@angular/router';
+import { routeConfig } from './app/app-routing.module';
 
 if (environment.production) {
   enableProdMode();
@@ -13,6 +20,13 @@ function bootstrap() {
   .catch(err => console.error(err));
 };
 
+// Hydration is an initial load optimization
+// bootstrapApplication(AppComponent, {
+//   providers: [
+//     provideClientHydration(withEventReplay(), withIncrementalHydration()),
+//     provideRouter(routeConfig)
+//   ]
+// });
 
 if (document.readyState === 'complete') {
   bootstrap();
