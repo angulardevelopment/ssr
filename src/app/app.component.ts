@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformServer, isPlatformBrowser } from '@angular/common';
 import { GlobalObjectService } from './services/global-object.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,8 @@ export class AppComponent {
   window;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-    private windowRef: GlobalObjectService,) {
+    private windowRef: GlobalObjectService,
+    private router: Router) {
     this.window = windowRef.getWindow();
   }
 
@@ -37,4 +38,11 @@ export class AppComponent {
         // console.log(window.innerHeight, 'innerHeight'); // not working
   }
 
+  routes: Routes = [];
+
+  ngAfterViewInit(): void {
+    // Fetch the routes from the router
+    this.routes = this.router.config;
+    console.log(this.routes);
+  }
 }
