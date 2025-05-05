@@ -1,4 +1,4 @@
-<p>new-component works!</p>
+
 hydrate triggers
 Same triggers you know and love: Interaction, Immediate, Idle, Viewport, Hover, Timer, When [condition]
 One new trigger: never
@@ -31,5 +31,7 @@ One new trigger: never
 
 @defer(on interaction; hydrate on idle) {
   <recommended-movies />
+} @placeholder {
+  <p>loading...</p>
 }
 

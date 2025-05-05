@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit, PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformServer, isPlatformBrowser } from '@angular/common';
+import { isPlatformServer, isPlatformBrowser, CommonModule } from '@angular/common';
 import { GlobalObjectService } from './services/global-object.service';
 import { Router, RouterModule, Routes } from '@angular/router';
 
@@ -8,8 +8,8 @@ import { Router, RouterModule, Routes } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone: false,
-  // imports: [    RouterModule,  ]
+  standalone: true,
+  imports: [    RouterModule, CommonModule ]
 })
 export class AppComponent {
   title = 'rendering';

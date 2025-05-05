@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    // AppComponent,
     NewComponentComponent,
     ItemsComponent
   ],
@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   // providers: [GlobalObjectService,],
-  bootstrap: [AppComponent],
+  // bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
