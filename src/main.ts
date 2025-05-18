@@ -10,6 +10,7 @@ import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import { routeConfig } from './app/app-routing.module';
+import { provideHttpClient } from '@angular/common/http';
 
 if (environment.production) {
   enableProdMode();
@@ -21,16 +22,17 @@ function bootstrap() {
 };
 
 // Hydration is an initial load optimization
-// bootstrapApplication(AppComponent, {
-//   providers: [
-//     provideClientHydration(withEventReplay(), withIncrementalHydration()),
-//     provideRouter(routeConfig)
-//   ]
-// });
+bootstrapApplication(AppComponent, {
+  providers: [
+    // provideClientHydration(withEventReplay(), withIncrementalHydration()),
+    provideRouter(routeConfig),
+    provideHttpClient(),
+  ]
+});
 
-if (document.readyState === 'complete') {
-  bootstrap();
-} else {
-  document.addEventListener('DOMContentLoaded', bootstrap);
-}
+// if (document.readyState === 'complete') {
+//   bootstrap();
+// } else {
+//   document.addEventListener('DOMContentLoaded', bootstrap);
+// }
 

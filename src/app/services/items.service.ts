@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
+import { Injectable, makeStateKey } from '@angular/core';
+export const STATE_KEY_ITEMS = makeStateKey('items');
 @Injectable({
   providedIn: 'root'
 })
